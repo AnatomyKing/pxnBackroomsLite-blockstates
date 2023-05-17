@@ -6,6 +6,7 @@ load: STARTUP
 depend:
   - pxnCommonPluginMC
   - Multiverse-Core
+  - Oraxen
 authors: [ lorenzop ]
 website: ${project.url}
 description: ${project.description}

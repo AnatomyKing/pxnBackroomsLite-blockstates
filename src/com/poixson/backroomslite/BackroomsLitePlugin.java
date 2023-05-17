@@ -3,63 +3,50 @@ package com.poixson.backroomslite;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.generator.ChunkGenerator;
+import org.bukkit.plugin.java.JavaPlugin;
 
-import com.poixson.commonmc.tools.plugin.xJavaPlugin;
-
-
-public class BackroomsLitePlugin extends xJavaPlugin {
-	@Override public int getSpigotPluginID() { return 108409; }
-	@Override public int getBStatsID() {       return 17876;  }
-	public static final String LOG_PREFIX  = "[pxnBackroomsLite] ";
-	public static final String CHAT_PREFIX = ChatColor.AQUA + "[Backrooms] " + ChatColor.WHITE;
-
-	protected static final String GENERATOR_NAME = "BackroomsLite";
-//TODO: change to https
-	protected static final String DEFAULT_RESOURCE_PACK = "https://dl.poixson.com/mcplugins/pxnBackrooms/pxnBackrooms-resourcepack.zip";
-
-	protected final Level0Generator generator;
+import java.util.logging.Logger;
 
 
+public class BackroomsLitePlugin extends JavaPlugin {
 
-	public BackroomsLitePlugin() {
-		super(BackroomsLitePlugin.class);
-		this.generator = new Level0Generator();
-	}
+    public static final Logger LOG        = Bukkit.getLogger();
+    public static final String LOG_PREFIX = "[pxnBackroomsLite] ";
+    public static final String CHAT_PREFIX = "" + ChatColor.AQUA + "[Backrooms] " + ChatColor.AQUA;
+    protected static final String GENERATOR_NAME = "BackroomsLite";
+    protected static final String DEFAULT_RESOURCE_PACK = "http://dl.poixson.com/mcplugins/pxnBackrooms/pxnBackrooms-resourcepack.zip";
+    private static BackroomsLitePlugin instance;
+    protected Level0Generator generator;
 
+    public static BackroomsLitePlugin getInstance() {
+        return instance;
+    }
 
+    @Override
+    public void onEnable() {
+        instance = this;
+        this.saveDefaultConfig();
+        this.getConfig();
+        this.generator = new Level0Generator();
+        String pack = Bukkit.getResourcePack();
+        if (pack == null || pack.isEmpty()) {
+            LOG.warning("[pxnBackroomsLite] Resource pack not set");
+            LOG.warning(
+                    "[pxnBackroomsLite] You can use this one: http://dl.poixson.com/mcplugins/pxnBackrooms/pxnBackrooms-resourcepack.zip");
+        } else {
+            LOG.info(String.format("%sUsing resource pack: %s", new Object[]{"[pxnBackroomsLite] ",
 
-	@Override
-	public void onEnable() {
-		super.onEnable();
-		// resource pack
-		{
-			final String pack = Bukkit.getResourcePack();
-			if (pack == null || pack.isEmpty()) {
-				LOG.warning(LOG_PREFIX + "Resource pack not set");
-				LOG.warning(LOG_PREFIX + "You can use this one: " + DEFAULT_RESOURCE_PACK);
-			} else {
-				LOG.info(String.format(
-					"%sUsing resource pack: %s",
-					LOG_PREFIX,
-					Bukkit.getResourcePack()
-				));
-			}
-		}
-	}
+                    Bukkit.getResourcePack()}));
+        }
+    }
 
-	@Override
-	public void onDisable() {
-		super.onDisable();
-	}
-
-
-
-	@Override
-	public ChunkGenerator getDefaultWorldGenerator(final String worldName, final String argsStr) {
-		LOG.info(String.format("%s%s world: %s", LOG_PREFIX, GENERATOR_NAME, worldName));
-		return this.generator;
-	}
+    @Override
+    public void onDisable() {
+    }
 
 
-
+    public ChunkGenerator getDefaultWorldGenerator(String worldName, String argsStr) {
+        LOG.info(String.format("%s%s world: %s", new Object[]{"[pxnBackroomsLite] ", "BackroomsLite", worldName}));
+        return this.generator;
+    }
 }

@@ -61,6 +61,7 @@
 				<filtering>true</filtering>
 				<includes>
 					<include>plugin.yml</include>
+					<include>config.yml</include>
 					<include>app.properties</include>
 				</includes>
 			</resource>
@@ -115,18 +116,6 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
-
-			<!-- Eclipse Plugin -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-eclipse-plugin</artifactId>
-				<version>${maven-eclipse-plugin-version}</version>
-				<configuration>
-					<projectNameTemplate>${project.name}</projectNameTemplate>
-					<downloadSources>true</downloadSources>
-					<downloadJavadocs>true</downloadJavadocs>
-				</configuration>
 			</plugin>
 
 			<!-- Commit-ID Plugin -->
@@ -185,6 +174,10 @@
 				<enabled>true</enabled>
 			</snapshots>
 		</repository>
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+		</repository>
 	</repositories>
 	<dependencies>
 		<dependency>
@@ -194,22 +187,38 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<artifactId>common-core</artifactId>
-			<groupId>com.poixson</groupId>
-			<version>${common-core-version}</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<artifactId>common-plugin-mc</artifactId>
-			<groupId>com.poixson</groupId>
-			<version>${common-plugin-mc-version}</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
 			<artifactId>Multiverse-Core</artifactId>
 			<groupId>com.onarandombox.multiversecore</groupId>
 			<version>${Multiverse-Core-version}</version>
 			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.github.oraxen</groupId>
+			<artifactId>oraxen</artifactId>
+			<version>1.155.4</version>
+			<scope>provided</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>gs.mclo</groupId>
+					<artifactId>mclogs</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.ticxo.playeranimator</groupId>
+					<artifactId>PlayerAnimator</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>me.gabytm.util</groupId>
+					<artifactId>actions-spigot</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>net.kyori</groupId>
+					<artifactId>*</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.jeff_media</groupId>
+					<artifactId>*</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 	</dependencies>
 </project>
