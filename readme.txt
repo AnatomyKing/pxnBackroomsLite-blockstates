@@ -14,3 +14,26 @@ or https://www.spigotmc.org/resources/pxncommonpluginmc.107049/
 
 Discord: https://discord.gg/jHgP2a3kDx
 Dev Builds: https://dl.poixson.com/mcplugins/pxnBackroomsLite/
+
+config example:
+
+full-namespaced-ids:
+
+lobby:
+  walls:
+    material: "minecraft:note_block[instrument=basedrum,note=16,powered=false]"
+  floor:
+    material: "minecraft:note_block[instrument=basedrum,note=17,powered=false]"
+  lamp:
+    material: "minecraft:note_block[instrument=basedrum,note=18,powered=false]"
+
+
+raw-materials:
+
+lobby:
+  walls:
+    material: "SMOOTH_SANDSTONE"
+  floor:
+    material: "BROWN_WOOL"
+  lamp:
+    material: "REDSTONE_LAMP"
