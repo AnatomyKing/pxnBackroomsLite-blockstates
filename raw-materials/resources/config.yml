@@ -1,7 +1,0 @@
-lobby:
-  walls:
-    material: "STONE"
-  floor:
-    material: "STONE"
-  lamp:
-    material: "GLOWSTONE"
