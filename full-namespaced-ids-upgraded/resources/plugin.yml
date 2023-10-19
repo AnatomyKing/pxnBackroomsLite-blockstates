@@ -1,0 +1,12 @@
+name: pnxBackroomsLite
+main: com.poixson.backroomslite.BackroomsLitePlugin
+version: ${project.version}
+api-version: '1.20'
+api: '1.20'
+load: STARTUP
+depend:
+  - Multiverse-Core
+authors: [ lorenzop ]
+website: ${project.url}
+description: ${project.description}
+
