@@ -1,0 +1,7 @@
+lobby:
+  walls:
+    material: "minecraft:note_block[instrument=basedrum,note=16,powered=false]"
+  floor:
+    material: "minecraft:note_block[instrument=basedrum,note=17,powered=false]"
+  lamp:
+    material: "minecraft:ochre_froglight"
