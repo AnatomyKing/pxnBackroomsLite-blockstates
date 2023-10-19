@@ -1,0 +1,38 @@
+name: pxnBackrooms
+main: com.poixson.backrooms.BackroomsPlugin
+version: 0.1.15-SNAPSHOT
+api-version: 1.19
+load: STARTUP
+depend:
+  - pxnCommonPluginMC
+  - Multiverse-Core
+softdepend:
+  - MoreFoods
+  - dynmap
+authors: [ lorenzop ]
+website: https://poixson.com
+description: Backrooms world generator for minecraft
+commands:
+    backrooms:
+        description: "Commands to administrate the backrooms"
+        usage: "Usage: /backrooms <cmd>"
+permission-message: "You don't have permission to use this command."
+permissions:
+    backrooms.*:
+        default: op
+        description: Gives access to all backrooms commands
+        children:
+            backrooms.tp: true
+            backrooms.tp.others: true
+    backrooms.tp:
+        default: op
+        description: Teleport to the backrooms
+    backrooms.tp.others:
+        default: op
+        description: Teleport players to the backrooms
+    backrooms.noclipfront:
+        default: false
+        description: Allow players to noclip from the frontrooms to the backrooms
+    backrooms.noclipback:
+        default: false
+        description: Allow players to noclip inside the backrooms
