@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated: Wed Jun 28 10:12:39 AM EDT 2023 -->
+<!-- Generated: Tue Mar 21 11:24:53 PM EDT 2023 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -23,7 +23,7 @@
 		<maven.compiler.target>17</maven.compiler.target>
 
 		<!-- Maven Plugins -->
-		<maven-resources-plugin-version>3.3.1</maven-resources-plugin-version>
+		<maven-resources-plugin-version>3.3.0</maven-resources-plugin-version>
 		<maven-compiler-plugin-version>3.11.0</maven-compiler-plugin-version>
 		<maven-jar-plugin-version>3.3.0</maven-jar-plugin-version>
 		<maven-source-plugin-version>3.3.0</maven-source-plugin-version>
@@ -32,22 +32,19 @@
 		<maven-shade-plugin-version>3.4.1</maven-shade-plugin-version>
 
 		<!-- Dependencies -->
-		<spigot-short-version>1.19</spigot-short-version>
-		<spigot-api-version>1.19.4-R0.1-SNAPSHOT</spigot-api-version>
-		<common-core-version>[4.0.0,)</common-core-version>
-		<common-plugin-mc-version>[4.0.0,)</common-plugin-mc-version>
-		<morefoods-api-version>[0.0.0,)</morefoods-api-version>
+		<spigot-short-version>1.20</spigot-short-version>
+		<spigot-api-version>1.20.2-R0.1-SNAPSHOT</spigot-api-version>
 		<Multiverse-Core-version>4.3.1</Multiverse-Core-version>
 
 	</properties>
 	<scm>
-		<url>https://git.poixson.com/summary/mc!pxnBackrooms.git</url>
-		<connection>scm:git:https://git.poixson.com/r/mc/pxnBackrooms.git</connection>
-		<developerConnection>scm:ssh://git.poixson.com/mc/pxnBackrooms.git</developerConnection>
+		<url>https://git.poixson.com/summary/mc!pxnBackroomsLite.git</url>
+		<connection>scm:git:https://git.poixson.com/r/mc/pxnBackroomsLite.git</connection>
+		<developerConnection>scm:ssh://git.poixson.com/mc/pxnBackroomsLite.git</developerConnection>
 	</scm>
 	<issueManagement>
 		<system>pxngit</system>
-		<url>https://git.poixson.com/tickets/mc!pxnBackrooms.git</url>
+		<url>https://git.poixson.com/tickets/mc!pxnBackroomsLite.git</url>
 	</issueManagement>
 	<ciManagement>
 		<system>pxnJenkins</system>
@@ -64,18 +61,8 @@
 				<filtering>true</filtering>
 				<includes>
 					<include>plugin.yml</include>
+					<include>config.yml</include>
 					<include>app.properties</include>
-					<include>chances.json</include>
-					<include>quotes.txt</include>
-					<include>scripts/backrooms-radiostation.js</include>
-				</includes>
-			</resource>
-			<resource>
-				<directory>resources/</directory>
-				<filtering>false</filtering>
-				<includes>
-					<include>pxnBackrooms-resourcepack.zip</include>
-					<include>pxnBackrooms-resourcepack.sha1</include>
 				</includes>
 			</resource>
 		</resources>
@@ -99,6 +86,10 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>${maven-compiler-plugin-version}</version>
+				<configuration>
+					<source>17</source>
+					<target>17</target>
+				</configuration>
 			</plugin>
 
 			<!-- Jar Plugin -->
@@ -125,18 +116,6 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
-
-			<!-- Eclipse Plugin -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-eclipse-plugin</artifactId>
-				<version>${maven-eclipse-plugin-version}</version>
-				<configuration>
-					<projectNameTemplate>${project.name}</projectNameTemplate>
-					<downloadSources>true</downloadSources>
-					<downloadJavadocs>true</downloadJavadocs>
-				</configuration>
 			</plugin>
 
 			<!-- Commit-ID Plugin -->
@@ -195,6 +174,10 @@
 				<enabled>true</enabled>
 			</snapshots>
 		</repository>
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+		</repository>
 	</repositories>
 	<dependencies>
 		<dependency>
@@ -204,27 +187,45 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<artifactId>common-core</artifactId>
-			<groupId>com.poixson</groupId>
-			<version>${common-core-version}</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<artifactId>common-plugin-mc</artifactId>
-			<groupId>com.poixson</groupId>
-			<version>${common-plugin-mc-version}</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<artifactId>morefoods-api</artifactId>
-			<groupId>com.poixson</groupId>
-			<version>${morefoods-api-version}</version>
-		</dependency>
-		<dependency>
 			<artifactId>Multiverse-Core</artifactId>
 			<groupId>com.onarandombox.multiversecore</groupId>
 			<version>${Multiverse-Core-version}</version>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.github.oraxen</groupId>
+			<artifactId>oraxen</artifactId>
+			<version>1.155.4</version>
+			<scope>provided</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>gs.mclo</groupId>
+					<artifactId>mclogs</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.ticxo.playeranimator</groupId>
+					<artifactId>PlayerAnimator</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>me.gabytm.util</groupId>
+					<artifactId>actions-spigot</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>net.kyori</groupId>
+					<artifactId>*</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.jeff_media</groupId>
+					<artifactId>*</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+    		<groupId>com.poixson</groupId>
+    		<artifactId>common-plugin-mc</artifactId>
+    		<version>4.0.34-SNAPSHOT</version>
+    		<scope>provided</scope>
+		</dependency>
 	</dependencies>
 </project>
+
