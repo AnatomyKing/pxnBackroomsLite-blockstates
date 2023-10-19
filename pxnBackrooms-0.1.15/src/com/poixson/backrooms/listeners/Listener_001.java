@@ -25,7 +25,7 @@ public class Listener_001 extends xListener<BackroomsPlugin> {
   protected final HashMap<UUID, List<Location>> playerLights = new HashMap<>();
   
   public Listener_001(BackroomsPlugin plugin) {
-    super((xJavaPlugin)plugin);
+    super((BackroomsPlugin)plugin);
   }
   
   public void unregister() {

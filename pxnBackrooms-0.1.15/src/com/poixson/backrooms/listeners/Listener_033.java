@@ -9,7 +9,7 @@ import org.bukkit.event.entity.EntityExplodeEvent;
 
 public class Listener_033 extends xListener<BackroomsPlugin> {
   public Listener_033(BackroomsPlugin plugin) {
-    super((xJavaPlugin)plugin);
+    super((BackroomsPlugin)plugin);
   }
   
   @EventHandler(priority = EventPriority.NORMAL, ignoreCancelled = true)

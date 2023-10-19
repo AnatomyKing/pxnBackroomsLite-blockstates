@@ -21,7 +21,7 @@ public class Listener_006 extends xListener<BackroomsPlugin> {
   protected final Level_000 level0;
   
   public Listener_006(BackroomsPlugin plugin, Level_000 level0) {
-    super((xJavaPlugin)plugin);
+    super((BackroomsPlugin)plugin);
     this.level0 = level0;
   }
   

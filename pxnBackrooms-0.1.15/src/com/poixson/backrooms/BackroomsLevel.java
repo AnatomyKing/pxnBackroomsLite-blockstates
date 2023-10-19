@@ -6,6 +6,8 @@ import com.onarandombox.MultiverseCore.api.MultiverseWorld;
 import com.poixson.commonmc.tools.plotter.BlockPlotter;
 import com.poixson.commonmc.tools.plugin.xJavaPlugin;
 import com.poixson.utils.RandomUtils;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -119,19 +121,20 @@ public abstract class BackroomsLevel extends ChunkGenerator {
   
   protected abstract void generate(int paramInt1, int paramInt2, ChunkGenerator.ChunkData paramChunkData, LinkedList<BlockPlotter> paramLinkedList);
   
-  public BiomeProvider getDefaultBiomeProvider(WorldInfo worldInfo) {
+public BiomeProvider getDefaultBiomeProvider(WorldInfo worldInfo) {
     return new BiomeProvider() {
-        private final List<Biome> biomes;
+        private final List<Biome> biomes = new ArrayList<>();
         
         public List<Biome> getBiomes(WorldInfo worldInfo) {
-          return this.biomes;
+            return this.biomes;
         }
         
         public Biome getBiome(WorldInfo worldInfo, int x, int y, int z) {
-          return Biome.THE_VOID;
+            return Biome.THE_VOID;
         }
-      };
-  }
+    };
+}
+
   
   public int getLevelFromY(int y) {
     return getMainLevel();

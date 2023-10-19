@@ -10,10 +10,12 @@ import com.poixson.tools.abstractions.AtomicDouble;
 import com.poixson.tools.dao.Iab;
 import com.poixson.utils.FastNoiseLiteD;
 import com.poixson.utils.StringUtils;
+
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
+
 import org.bukkit.Material;
 import org.bukkit.block.data.BlockData;
 import org.bukkit.configuration.ConfigurationSection;
@@ -21,80 +23,47 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.generator.ChunkGenerator;
 
 public class Gen_037 extends BackroomsGen {
+
   public static final double DEFAULT_NOISE_ROOM_FREQ = 0.004D;
-  
   public static final int DEFAULT_NOISE_ROOM_OCTAVE = 2;
-  
   public static final double DEFAULT_NOISE_ROOM_GAIN = 0.1D;
-  
   public static final double DEFAULT_NOISE_ROOM_STRENGTH = 2.8D;
-  
   public static final double DEFAULT_NOISE_TUNNEL_FREQ = 0.015D;
-  
   public static final double DEFAULT_NOISE_TUNNEL_STRENGTH = 5.0D;
-  
   public static final double DEFAULT_NOISE_PORTAL_LOBBY_FREQ = 0.02D;
-  
   public static final int DEFAULT_NOISE_PORTAL_LOBBY_OCTAVE = 2;
-  
   public static final double DEFAULT_NOISE_PORTAL_HOTEL_FREQ = 0.01D;
-  
   public static final double DEFAULT_THRESH_ROOM = 0.2D;
-  
   public static final double DEFAULT_THRESH_PORTAL = 0.5D;
-  
   public static final int WATER_DEPTH = 3;
-  
   public static final String DEFAULT_BLOCK_WALL_A = "minecraft:prismarine_bricks";
-  
   public static final String DEFAULT_BLOCK_WALL_B = "minecraft:prismarine";
-  
   public static final String DEFAULT_BLOCK_SUBFLOOR = "minecraft:dark_prismarine";
-  
   public static final String DEFAULT_BLOCK_SUBCEILING = "minecraft:dark_prismarine";
-  
   public static final String DEFAULT_BLOCK_CEILING = "minecraft:glowstone";
-  
+
   public final FastNoiseLiteD noisePoolRooms;
-  
   public final FastNoiseLiteD noiseTunnels;
-  
   public final FastNoiseLiteD noisePortalLobby;
-  
   public final FastNoiseLiteD noisePortalHotel;
-  
+
   public final AtomicDouble noise_room_freq = new AtomicDouble(0.004D);
-  
   public final AtomicInteger noise_room_octave = new AtomicInteger(2);
-  
   public final AtomicDouble noise_room_gain = new AtomicDouble(0.1D);
-  
   public final AtomicDouble noise_room_strength = new AtomicDouble(2.8D);
-  
   public final AtomicDouble noise_tunnel_freq = new AtomicDouble(0.015D);
-  
   public final AtomicDouble noise_tunnel_strength = new AtomicDouble(5.0D);
-  
   public final AtomicDouble noise_portal_lobby_freq = new AtomicDouble(0.02D);
-  
   public final AtomicInteger noise_portal_lobby_octave = new AtomicInteger(2);
-  
   public final AtomicDouble noise_portal_hotel_freq = new AtomicDouble(0.01D);
-  
   public final AtomicDouble thresh_room = new AtomicDouble(0.2D);
-  
   public final AtomicDouble thresh_portal = new AtomicDouble(0.5D);
-  
   public final AtomicReference<String> block_wall_a = new AtomicReference<>(null);
-  
   public final AtomicReference<String> block_wall_b = new AtomicReference<>(null);
-  
   public final AtomicReference<String> block_subfloor = new AtomicReference<>(null);
-  
   public final AtomicReference<String> block_subceiling = new AtomicReference<>(null);
-  
   public final AtomicReference<String> block_ceiling = new AtomicReference<>(null);
-  
+
   public Gen_037(BackroomsLevel backlevel, int level_y, int level_h) {
     super(backlevel, level_y, level_h);
     this.noisePoolRooms = register(new FastNoiseLiteD());
@@ -102,6 +71,7 @@ public class Gen_037 extends BackroomsGen {
     this.noisePortalLobby = register(new FastNoiseLiteD());
     this.noisePortalHotel = register(new FastNoiseLiteD());
   }
+  
   
   public void initNoise() {
     this.noisePoolRooms.setFrequency(this.noise_room_freq.get());
@@ -221,7 +191,7 @@ public class Gen_037 extends BackroomsGen {
         StringBuilder[][] matrix = plot.getMatrix3D();
         switch (dao.type) {
           case SOLID:
-            for (i = 0; i < 8; i++) {
+            for (int i = 0; i < 8; i++) {
               for (int iy = 0; iy < h; iy++)
                 matrix[iy][i].append(StringUtils.Repeat(8, '@')); 
             } 
@@ -323,7 +293,7 @@ public class Gen_037 extends BackroomsGen {
             } 
             break;
           case OPEN:
-            for (i = 0; i < 8; i++) {
+            for (int i = 0; i < 8; i++) {
               matrix[0][i].append(StringUtils.Repeat(8, '#'));
               for (int iy = 1; iy < h; iy++)
                 matrix[iy][i].append(StringUtils.Repeat(8, ' ')); 

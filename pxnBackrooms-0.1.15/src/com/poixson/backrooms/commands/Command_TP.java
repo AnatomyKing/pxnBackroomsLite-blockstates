@@ -12,7 +12,7 @@ public class Command_TP extends pxnCommand<BackroomsPlugin> {
   protected final BackroomsPlugin plugin;
   
   public Command_TP(BackroomsPlugin plugin) {
-    super((xJavaPlugin)plugin, new String[] { "tp", "teleport" });
+    super((BackroomsPlugin)plugin, new String[] { "tp", "teleport" });
     this.plugin = plugin;
   }
   

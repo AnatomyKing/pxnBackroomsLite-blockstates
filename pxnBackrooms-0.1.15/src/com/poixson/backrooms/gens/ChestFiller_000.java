@@ -8,10 +8,14 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class ChestFiller_000 extends DelayedChestFiller {
-  public ChestFiller_000(JavaPlugin plugin, String worldName, int x, int y, int z) {
+
+  private Gen_000 gen;
+
+  public ChestFiller_000(JavaPlugin plugin, String worldName, int x, int y, int z, Gen_000 gen) {
     super(plugin, worldName, x, y, z);
+    this.gen = gen;
   }
-  
+
   public void fill(Inventory chest) {
     ItemStack item = new ItemStack(Material.BREAD);
     Location loc = chest.getLocation();
@@ -20,9 +24,10 @@ public class ChestFiller_000 extends DelayedChestFiller {
     for (int i = 0; i < 27; i++) {
       int x = xx + i % 9;
       int y = zz + Math.floorDiv(i, 9);
-      double value = Gen_000.this.noiseLoot.getNoise(x, y);
-      if (value > Gen_000.this.thresh_loot.get())
+      double value = this.gen.noiseLoot.getNoise(x, y);
+      if (value > this.gen.thresh_loot.get())
         chest.setItem(i, item); 
     } 
   }
 }
+

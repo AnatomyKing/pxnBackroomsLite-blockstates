@@ -6,7 +6,7 @@ import com.poixson.commonmc.tools.plugin.xJavaPlugin;
 
 public class Commands extends pxnCommandsHandler<BackroomsPlugin> {
   public Commands(BackroomsPlugin plugin) {
-    super((xJavaPlugin)plugin, new String[] { "backrooms" });
+    super((BackroomsPlugin)plugin, new String[] { "backrooms" });
     addCommand(new Command_TP(plugin));
   }
 }

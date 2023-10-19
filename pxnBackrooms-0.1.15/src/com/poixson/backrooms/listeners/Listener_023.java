@@ -17,7 +17,7 @@ import org.bukkit.inventory.ItemStack;
 
 public class Listener_023 extends xListener<BackroomsPlugin> {
   public Listener_023(BackroomsPlugin plugin) {
-    super((xJavaPlugin)plugin);
+    super((BackroomsPlugin)plugin);
   }
   
   @EventHandler(priority = EventPriority.NORMAL, ignoreCancelled = true)

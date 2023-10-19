@@ -10,7 +10,7 @@ import org.bukkit.event.EventPriority;
 
 public class Listener_771 extends xListener<BackroomsPlugin> {
   public Listener_771(BackroomsPlugin plugin) {
-    super((xJavaPlugin)plugin);
+    super((BackroomsPlugin)plugin);
   }
   
   @EventHandler(priority = EventPriority.NORMAL, ignoreCancelled = true)
