@@ -87,10 +87,11 @@ public class Gen_771 extends BackroomsGen {
     boolean centerX = (chunkX == 0 || chunkX == -1);
     boolean centerZ = (chunkZ == 0 || chunkZ == -1);
     if (centerX && centerZ) {
-      generateWorldCenter(chunk, chunkX, chunkZ);
-    } else if (centerX || centerZ) {
+      generateWorldCenter(chunk, chunkX, chunkZ);}
+    /* } else if (centerX || centerZ) {
       generateRoad(chunk, chunkX, chunkZ);
     } 
+    */
   }
   
   protected void generateWorldCenter(ChunkGenerator.ChunkData chunk, int chunkX, int chunkZ) {
@@ -243,7 +244,7 @@ public class Gen_771 extends BackroomsGen {
     plot.run();
   }
   
-  protected void generateRoad(ChunkGenerator.ChunkData chunk, int chunkX, int chunkZ) {
+ /*  protected void generateRoad(ChunkGenerator.ChunkData chunk, int chunkX, int chunkZ) {
     BlockFace direction, side;
     int x = 0;
     int z = 0;
@@ -292,11 +293,12 @@ public class Gen_771 extends BackroomsGen {
       default:
         throw new RuntimeException("Unknown direction: " + direction.toString());
     } 
+    
     generateRoadTop(chunk, direction, side, chunkX, chunkZ, x, z);
     generateRoadBottom(chunk, direction, side, chunkX, chunkZ, x, z);
     generatePillars(chunk, direction, side, chunkX, chunkZ, x, z);
   }
-  
+  */
   protected void generateRoadTop(ChunkGenerator.ChunkData chunk, BlockFace direction, BlockFace side, int chunkX, int chunkZ, int x, int z) {
     double thresh_lamps = this.thresh_lamps.get();
     BlockPlotter plot = (new PlotterFactory()).placer(chunk).axis("u" + LocationUtils.FaceToAxString(direction) + LocationUtils.FaceToAxString(side)).xz(x, z).y(this.level_y + this.level_h).whd(16, 3, 16).build();
@@ -345,7 +347,7 @@ public class Gen_771 extends BackroomsGen {
     plot.run();
   }
   
-  protected void generatePillars(ChunkGenerator.ChunkData chunk, BlockFace direction, BlockFace side, int chunkX, int chunkZ, int x, int z) {
+ /* protected void generatePillars(ChunkGenerator.ChunkData chunk, BlockFace direction, BlockFace side, int chunkX, int chunkZ, int x, int z) {
     PillarType pillar_type;
     int mod_pillar;
     double thresh_ladder = this.thresh_ladder.get();
@@ -420,6 +422,7 @@ public class Gen_771 extends BackroomsGen {
     } 
     throw new RuntimeException("Unknown direction: " + direction.toString());
   }
+  */
   
   protected void generatePillar(PillarType type, ChunkGenerator.ChunkData chunk, BlockFace direction, BlockFace side, int chunkX, int chunkZ, int x, int z) {
     int iy;

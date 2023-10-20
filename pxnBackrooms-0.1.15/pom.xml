@@ -226,6 +226,12 @@
     		<version>4.0.34-SNAPSHOT</version>
     		<scope>provided</scope>
 		</dependency>
+		<dependency>
+    		<groupId>com.poixson</groupId>
+    		<artifactId>morefoods-api</artifactId>
+    		<version>0.1.6</version>
+    		<scope>provided</scope>
+		</dependency>
 	</dependencies>
 </project>
 

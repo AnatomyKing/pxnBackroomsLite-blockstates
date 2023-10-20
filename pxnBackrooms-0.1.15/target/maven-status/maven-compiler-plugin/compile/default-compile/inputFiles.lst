@@ -9,7 +9,6 @@ C:\Users\mrluu\Documents\GitHub\pxnBackroomsLite-mirror\pxnBackrooms-0.1.15\src\
 C:\Users\mrluu\Documents\GitHub\pxnBackroomsLite-mirror\pxnBackrooms-0.1.15\src\com\poixson\backrooms\worlds\Level_771.java
 C:\Users\mrluu\Documents\GitHub\pxnBackroomsLite-mirror\pxnBackrooms-0.1.15\src\com\poixson\backrooms\gens\hotel\HotelRoomSpecs.java
 C:\Users\mrluu\Documents\GitHub\pxnBackroomsLite-mirror\pxnBackrooms-0.1.15\src\com\poixson\backrooms\gens\RoomType.java
-C:\Users\mrluu\Documents\GitHub\pxnBackroomsLite-mirror\pxnBackrooms-0.1.15\src\com\poixson\backrooms\gens\hotel\HotelRoomSpecs$RoomTheme.java
 C:\Users\mrluu\Documents\GitHub\pxnBackroomsLite-mirror\pxnBackrooms-0.1.15\src\com\poixson\backrooms\BackroomsPlugin1.java
 C:\Users\mrluu\Documents\GitHub\pxnBackroomsLite-mirror\pxnBackrooms-0.1.15\src\com\poixson\backrooms\listeners\PlayerDamageListener.java
 C:\Users\mrluu\Documents\GitHub\pxnBackroomsLite-mirror\pxnBackrooms-0.1.15\src\com\poixson\backrooms\PreGenData.java
@@ -23,7 +22,6 @@ C:\Users\mrluu\Documents\GitHub\pxnBackroomsLite-mirror\pxnBackrooms-0.1.15\src\
 C:\Users\mrluu\Documents\GitHub\pxnBackroomsLite-mirror\pxnBackrooms-0.1.15\src\com\poixson\backrooms\gens\Gen_005.java
 C:\Users\mrluu\Documents\GitHub\pxnBackroomsLite-mirror\pxnBackrooms-0.1.15\src\com\poixson\backrooms\worlds\Level_000.java
 C:\Users\mrluu\Documents\GitHub\pxnBackroomsLite-mirror\pxnBackrooms-0.1.15\src\com\poixson\backrooms\listeners\Listener_006.java
-C:\Users\mrluu\Documents\GitHub\pxnBackroomsLite-mirror\pxnBackrooms-0.1.15\src\com\poixson\backrooms\gens\hotel\HotelRoomSpecs$1.java
 C:\Users\mrluu\Documents\GitHub\pxnBackroomsLite-mirror\pxnBackrooms-0.1.15\src\com\poixson\backrooms\listeners\Listener_033.java
 C:\Users\mrluu\Documents\GitHub\pxnBackroomsLite-mirror\pxnBackrooms-0.1.15\src\com\poixson\backrooms\gens\Pop_001.java
 C:\Users\mrluu\Documents\GitHub\pxnBackroomsLite-mirror\pxnBackrooms-0.1.15\src\com\poixson\backrooms\gens\ChestFiller_000.java
@@ -44,6 +42,7 @@ C:\Users\mrluu\Documents\GitHub\pxnBackroomsLite-mirror\pxnBackrooms-0.1.15\src\
 C:\Users\mrluu\Documents\GitHub\pxnBackroomsLite-mirror\pxnBackrooms-0.1.15\src\com\poixson\backrooms\gens\Gen_001.java
 C:\Users\mrluu\Documents\GitHub\pxnBackroomsLite-mirror\pxnBackrooms-0.1.15\src\com\poixson\backrooms\BackroomsLevel.java
 C:\Users\mrluu\Documents\GitHub\pxnBackroomsLite-mirror\pxnBackrooms-0.1.15\src\com\poixson\backrooms\listeners\Listener_771.java
+C:\Users\mrluu\Documents\GitHub\pxnBackroomsLite-mirror\pxnBackrooms-0.1.15\src\com\poixson\backrooms\gens\hotel\RoomTheme.java
 C:\Users\mrluu\Documents\GitHub\pxnBackroomsLite-mirror\pxnBackrooms-0.1.15\src\com\poixson\backrooms\gens\NodeType.java
 C:\Users\mrluu\Documents\GitHub\pxnBackroomsLite-mirror\pxnBackrooms-0.1.15\src\com\poixson\backrooms\tasks\TaskHourly.java
 C:\Users\mrluu\Documents\GitHub\pxnBackroomsLite-mirror\pxnBackrooms-0.1.15\src\com\poixson\backrooms\BackroomsGen.java
