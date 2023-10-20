@@ -9,9 +9,10 @@ public class HotelData implements PreGenData {
   
   public boolean hall_center = false;
   
-  public HotelData(double value) {
+  public HotelData(double value, Gen_005 gen) {
     this.value = value;
-    double thresh_room_hall = Gen_005.this.thresh_room_hall.get();
+    double thresh_room_hall = gen.thresh_room_hall.get();
     this.type = (value > thresh_room_hall) ? Gen_005.NodeType.HALL : Gen_005.NodeType.ROOM;
   }
 }
+

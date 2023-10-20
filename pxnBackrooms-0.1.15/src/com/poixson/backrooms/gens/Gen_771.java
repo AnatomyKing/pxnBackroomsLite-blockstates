@@ -25,7 +25,6 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
-
 public class Gen_771 extends BackroomsGen {
   public static final double DEFAULT_NOISE_LAMPS_FREQ = 0.3D;
   

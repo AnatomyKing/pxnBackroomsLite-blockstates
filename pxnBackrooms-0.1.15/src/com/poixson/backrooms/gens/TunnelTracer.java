@@ -12,11 +12,14 @@ public class TunnelTracer extends LineTracer {
     public final int y;
     public int ends = 0;
 
-    public TunnelTracer(LimitedRegion region, LinkedList<TunnelTracer> otherTracers, int x, int z) {
+    private final Pop_037 pop;
+
+    public TunnelTracer(Pop_037 pop, LimitedRegion region, LinkedList<TunnelTracer> otherTracers, int x, int z) {
         super(x, z, false);
         this.region = region;
         this.otherTracers = otherTracers;
-        this.y = Pop_037.this.gen.level_y + 9;
+        this.y = pop.gen.level_y + 9;
+        this.pop = pop;
         Material type = region.getType(x, this.y, z);
         if (Material.AIR.equals(type))
             this.ok = false;
@@ -58,9 +61,10 @@ public class TunnelTracer extends LineTracer {
     }
 
     public boolean isValidPoint(int x, int y) {
-        double value = Pop_037.this.gen.noiseTunnels.getNoiseRot(x, y, 0.25D);
+        double value = this.pop.gen.noiseTunnels.getNoiseRot(x, y, 0.25D);
         return (value > 0.95D);
     }
 }
+
 
 

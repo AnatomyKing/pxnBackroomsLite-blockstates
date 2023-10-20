@@ -10,23 +10,23 @@ public class PoolData implements PreGenData {
     public final boolean possiblePortalLobby;
     public RoomType type;
 
-    public PoolData(int x, int z) {
-        this.valueRoom = Gen_037.this.noisePoolRooms.getNoise(x, z);
-        this.valuePortalHotel = Gen_037.this.noisePortalHotel.getNoise(x, z);
-        this.valuePortalLobby = Gen_037.this.noisePortalLobby.getNoise(x, z);
+    public PoolData(int x, int z, Gen_037 gen_037) {
+        this.valueRoom = gen_037.noisePoolRooms.getNoise(x, z);
+        this.valuePortalHotel = gen_037.noisePortalHotel.getNoise(x, z);
+        this.valuePortalLobby = gen_037.noisePortalLobby.getNoise(x, z);
 
-        if (this.valueRoom < Gen_037.this.thresh_room.get()) {
+        if (this.valueRoom < gen_037.thresh_room.get()) {
             this.type = RoomType.SOLID;
-            this.possiblePortalHotel = (this.valuePortalHotel > Gen_037.this.thresh_portal.get());
+            this.possiblePortalHotel = (this.valuePortalHotel > gen_037.thresh_portal.get());
             this.possiblePortalLobby = false;
         } else {
             this.type = RoomType.OPEN;
             this.possiblePortalHotel = false;
             this.possiblePortalLobby = (
-                this.valuePortalLobby > Gen_037.this.noisePortalLobby.getNoise(x, (z - 1)) &&
-                this.valuePortalLobby > Gen_037.this.noisePortalLobby.getNoise(x, (z + 1)) &&
-                this.valuePortalLobby > Gen_037.this.noisePortalLobby.getNoise((x + 1), z) &&
-                this.valuePortalLobby > Gen_037.this.noisePortalLobby.getNoise((x - 1), z)
+                this.valuePortalLobby > gen_037.noisePortalLobby.getNoise(x, (z - 1)) &&
+                this.valuePortalLobby > gen_037.noisePortalLobby.getNoise(x, (z + 1)) &&
+                this.valuePortalLobby > gen_037.noisePortalLobby.getNoise((x + 1), z) &&
+                this.valuePortalLobby > gen_037.noisePortalLobby.getNoise((x - 1), z)
             );
         }
     }
@@ -35,4 +35,3 @@ public class PoolData implements PreGenData {
         return RoomType.SOLID.equals(this.type);
     }
 }
-

@@ -43,7 +43,7 @@ public class PlayerDamageListener extends xListener<BackroomsPlugin> {
   protected final HashMap<UUID, PlayerDamageDAO> lastPlayerDamage = new HashMap<>();
   
   public PlayerDamageListener(BackroomsPlugin plugin) {
-    super((xJavaPlugin)plugin);
+    super((BackroomsPlugin)plugin);
   }
   
   @EventHandler(priority = EventPriority.NORMAL, ignoreCancelled = true)
