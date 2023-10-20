@@ -94,8 +94,10 @@ public class Gen_023 extends BackroomsGen {
           int modX6 = Math.abs(xx) % 7;
           int modZ6 = Math.abs(zz) % 7;
           if (modZ6 == 0 && modX6 < 2 && dao_lobby.wall_dist > 1) {
-            chunk.setBlock(ix, cy, iz, Material.VERDANT_FROGLIGHT);
-            chunk.setBlock(ix, cy - 1, iz, Material.WEEPING_VINES);
+            for (int i = 0; i < 4; i++) {
+              chunk.setBlock(ix, cy - i - 2, iz, Material.POLISHED_DEEPSLATE_WALL);
+              }
+              chunk.setBlock(ix, cy, iz, Material.LANTERN);
           } else {
             chunk.setBlock(ix, cy, iz, block_ceiling);
           } 
