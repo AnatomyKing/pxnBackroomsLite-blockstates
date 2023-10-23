@@ -1,0 +1,11 @@
+name: ${project.name}
+main: com.poixson.backroomslite.BackroomsLitePlugin
+version: ${project.version}
+api-version: ${spigot-short-version}
+load: STARTUP
+depend:
+  - pxnCommonPluginMC
+  - Multiverse-Core
+authors: [ lorenzop ]
+website: ${project.url}
+description: ${project.description}

@@ -45,10 +45,10 @@ public class HotelRoomStairs implements HotelRoom {
     plot.type('=', Material.DARK_OAK_PLANKS);
     plot.type('$', block_hall_wall);
     plot.type('&', block_hall_wall);
-    plot.type('d', Material.SPRUCE_DOOR);
-    plot.type('D', Material.SPRUCE_DOOR);
-    plot.type('_', Material.DARK_OAK_PRESSURE_PLATE);
-    plot.type('L', Material.DARK_OAK_STAIRS);
+    plot.type('d', Material.AIR);
+    plot.type('D', Material.AIR);
+    plot.type('_', Material.AIR);
+    plot.type('L', Material.DARK_OAK_PLANKS);
     StringBuilder[][] matrix = plot.getMatrix3D();
     int door_x = Math.floorDiv(w, 2) - 2;
     for (int iy = 0; iy < 7; iy++) {
@@ -104,7 +104,7 @@ public class HotelRoomStairs implements HotelRoom {
     BlockPlotter plot = (new PlotterFactory()).placer(region).axis("use").rotate(direction.getOppositeFace()).xyz(x, 99, z).whd(w, 5, d).build();
     plot.type('.', Material.AIR);
     plot.type('#', Material.BEDROCK);
-    plot.type('L', Material.DARK_OAK_STAIRS);
+    plot.type('L', Material.DARK_OAK_PLANKS);
     StringBuilder[][] matrix = plot.getMatrix3D();
     int door_x = Math.floorDiv(w, 2) - 2;
     for (int iy = 0; iy < 5; iy++) {

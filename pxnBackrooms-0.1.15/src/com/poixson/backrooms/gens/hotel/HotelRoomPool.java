@@ -65,14 +65,14 @@ public class HotelRoomPool implements HotelRoom {
     plot.type('@', block_pool_wall_b);
     plot.type('.', Material.AIR);
     plot.type(',', "minecraft:water[level=0]");
-    plot.type('g', Material.GLOWSTONE);
+    plot.type('g', Material.SEA_LANTERN);
     plot.type('X', Material.BEDROCK);
-    plot.type('-', Material.PRISMARINE_BRICK_SLAB);
+    plot.type('-', Material.WATER);
     plot.type('$', block_hotel_wall);
     plot.type('&', block_hotel_wall);
-    plot.type('d', Material.ACACIA_DOOR);
-    plot.type('D', Material.ACACIA_DOOR);
-    plot.type('_', Material.HEAVY_WEIGHTED_PRESSURE_PLATE);
+    plot.type('d', Material.AIR);
+    plot.type('D', Material.AIR);
+    plot.type('_', Material.AIR);
     StringBuilder[][] matrix = plot.getMatrix3D();
     int hy = 19;
     for (int iy = 0; iy < 26; iy++) {

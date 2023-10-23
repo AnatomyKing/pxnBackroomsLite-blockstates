@@ -38,7 +38,7 @@ public class HotelRoomSpecs {
     int index_walls = (int)Math.floor((value + 1.0D) * 55.0D) + 5;
     int index_bed = (int)Math.floor((value + 1.0D) * 999.0D);
     if (index_carpet < 7 && index_walls < 7)
-      return new HotelRoomSpecs(value, RoomTheme.CHEESE, Material.END_STONE, Material.END_STONE_BRICKS, Material.YELLOW_BED, Material.BIRCH_DOOR, Material.BIRCH_PRESSURE_PLATE); 
+      return new HotelRoomSpecs(value, RoomTheme.CHEESE, Material.END_STONE, Material.END_STONE_BRICKS, Material.YELLOW_BED, Material.AIR, Material.AIR); 
     int num_themes = 4;
     int index_theme = (int)Math.round((value + 1.0D) * 4.0D * 0.5D);
     switch (index_theme) {
@@ -126,52 +126,52 @@ public class HotelRoomSpecs {
         switch (index) {
           case 0:
             bed = Material.WHITE_BED;
-            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.DARK_OAK_DOOR, Material.DARK_OAK_PRESSURE_PLATE);
+            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.AIR, Material.AIR);
           case 1:
             bed = Material.LIGHT_GRAY_BED;
-            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.DARK_OAK_DOOR, Material.DARK_OAK_PRESSURE_PLATE);
+            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.AIR, Material.AIR);
           case 2:
             bed = Material.GRAY_BED;
-            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.DARK_OAK_DOOR, Material.DARK_OAK_PRESSURE_PLATE);
+            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.AIR, Material.AIR);
           case 3:
             bed = Material.BLACK_BED;
-            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.DARK_OAK_DOOR, Material.DARK_OAK_PRESSURE_PLATE);
+            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.AIR, Material.AIR);
           case 4:
             bed = Material.BROWN_BED;
-            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.DARK_OAK_DOOR, Material.DARK_OAK_PRESSURE_PLATE);
+            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.AIR, Material.AIR);
           case 5:
             bed = Material.RED_BED;
-            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.DARK_OAK_DOOR, Material.DARK_OAK_PRESSURE_PLATE);
+            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.AIR, Material.AIR);
           case 6:
             bed = Material.ORANGE_BED;
-            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.DARK_OAK_DOOR, Material.DARK_OAK_PRESSURE_PLATE);
+            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.AIR, Material.AIR);
           case 7:
             bed = Material.YELLOW_BED;
-            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.DARK_OAK_DOOR, Material.DARK_OAK_PRESSURE_PLATE);
+            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.AIR, Material.AIR);
           case 8:
             bed = Material.LIME_BED;
-            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.DARK_OAK_DOOR, Material.DARK_OAK_PRESSURE_PLATE);
+            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.AIR, Material.AIR);
           case 9:
             bed = Material.GREEN_BED;
-            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.DARK_OAK_DOOR, Material.DARK_OAK_PRESSURE_PLATE);
+            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.AIR, Material.AIR);
           case 10:
             bed = Material.CYAN_BED;
-            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.DARK_OAK_DOOR, Material.DARK_OAK_PRESSURE_PLATE);
+            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.AIR, Material.AIR);
           case 11:
             bed = Material.LIGHT_BLUE_BED;
-            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.DARK_OAK_DOOR, Material.DARK_OAK_PRESSURE_PLATE);
+            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.AIR, Material.AIR);
           case 12:
             bed = Material.BLUE_BED;
-            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.DARK_OAK_DOOR, Material.DARK_OAK_PRESSURE_PLATE);
+            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.AIR, Material.AIR);
           case 13:
             bed = Material.PURPLE_BED;
-            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.DARK_OAK_DOOR, Material.DARK_OAK_PRESSURE_PLATE);
+            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.AIR, Material.AIR);
           case 14:
             bed = Material.MAGENTA_BED;
-            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.DARK_OAK_DOOR, Material.DARK_OAK_PRESSURE_PLATE);
+            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.AIR, Material.AIR);
           case 15:
             bed = Material.PINK_BED;
-            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.DARK_OAK_DOOR, Material.DARK_OAK_PRESSURE_PLATE);
+            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.AIR, Material.AIR);
         } 
         throw new RuntimeException("Unknown hotel bed index: " + Integer.toString(index));
       case OVERGROWN:
@@ -225,19 +225,19 @@ public class HotelRoomSpecs {
         switch (index) {
           case 0:
             bed = Material.LIGHT_GRAY_BED;
-            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.DARK_OAK_DOOR, Material.DARK_OAK_PRESSURE_PLATE);
+            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.AIR, Material.AIR);
           case 1:
             bed = Material.GRAY_BED;
-            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.DARK_OAK_DOOR, Material.DARK_OAK_PRESSURE_PLATE);
+            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.AIR, Material.AIR);
           case 2:
             bed = Material.BROWN_BED;
-            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.DARK_OAK_DOOR, Material.DARK_OAK_PRESSURE_PLATE);
+            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.AIR, Material.AIR);
           case 3:
             bed = Material.GREEN_BED;
-            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.DARK_OAK_DOOR, Material.DARK_OAK_PRESSURE_PLATE);
+            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.AIR, Material.AIR);
           case 4:
             bed = Material.CYAN_BED;
-            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.DARK_OAK_DOOR, Material.DARK_OAK_PRESSURE_PLATE);
+            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.AIR, Material.AIR);
         } 
         throw new RuntimeException("Unknown hotel bed index: " + Integer.toString(index));
       case CURSED:
@@ -312,10 +312,10 @@ public class HotelRoomSpecs {
         switch (index) {
           case 0:
             bed = Material.BLACK_BED;
-            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.DARK_OAK_DOOR, Material.DARK_OAK_PRESSURE_PLATE);
+            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.AIR, Material.AIR);
           case 1:
             bed = Material.RED_BED;
-            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.DARK_OAK_DOOR, Material.DARK_OAK_PRESSURE_PLATE);
+            return new HotelRoomSpecs(value, theme, carpet, walls, bed, Material.AIR, Material.AIR);
         } 
         throw new RuntimeException("Unknown hotel bed index: " + Integer.toString(index));
     } 
